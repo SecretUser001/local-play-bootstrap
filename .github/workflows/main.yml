@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4.2.2
+
       - name: Run docker compose
         uses: hoverkraft-tech/compose-action@3846bcd61da338e9eaaf83e7ed0234a12b099b72 # v2.4.1
         with:
@@ -15,3 +17,11 @@ jobs:
       - name: Execute tests in the running services
         run: |
           docker compose up
+
+      - name: Archive log files
+        uses: actions/upload-artifact@v4
+        with:
+          name: bot-logs
+          path: |
+            logs
+            replays
