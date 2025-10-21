@@ -9,7 +9,7 @@
 
     "SC2API" :
     {
-        "BotRace"                   : "Protoss",
+        "BotRace"                   : "Protoss"
     },
 
     "Micro" :
