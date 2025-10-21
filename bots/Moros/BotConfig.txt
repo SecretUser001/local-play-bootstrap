@@ -1,0 +1,96 @@
+{
+    "Bot Info" :
+    {
+        "BotName"                   : "Moros",
+        "Authors"                   : "secretuser",
+        "PrintInfoOnStart"          : true
+    },
+
+
+    "SC2API" :
+    {
+        "BotRace"                   : "Protoss",
+        "EnemyDifficulty"           : 2,
+        "EnemyRace"                 : "Random",
+        "MapFile"                   : "/scratch/beda/starcraft/StarCraftII/maps/PylonAIE_v4.SC2Map",
+        "StepSize"                  : 1
+    },
+
+    "Micro" :
+    {
+        "KiteWithRangedUnits"       : false,
+        "ScoutHarassEnemy"          : true
+    },
+
+    "Macro" :
+    {
+        "WorkersPerRefinery"        : 3,
+        "BuildingSpacing"           : 0,
+        "PylonSpacing"              : 3
+    },
+
+    "Debug" :
+    {
+	"ReplayFolder"              : "/scratch/beda/games/lutris/games/battlenew2/drive_c/users/beda/Documents/StarCraft II/Accounts/1164985617/2-S2-1-10972823/Replays/Multiplayer/",
+        "DrawGameInfo"              : true,
+        "DrawProductionInfo"        : true,
+        "DrawBaseLocationInfo"      : true,
+        "DrawTileInfo"              : false,
+        "DrawWalkableSectors"       : false,
+        "DrawScoutInfo"             : false,
+        "DrawEnemyUnitInfo"         : false,
+        "DrawResourceInfo"          : false,
+        "DrawUnitTargetInfo"        : false,
+        "DrawLastSeenTileInfo"      : false,
+        "DrawSquadInfo"             : false,
+        "DrawWorkerInfo"            : false,
+        "DrawBuildingInfo"          : false,
+        "DrawReservedBuildingTiles" : false
+    },
+    
+    "Modules" :
+    {
+        "UseAutoObserver"           : false
+    },
+
+    "SC2API Strategy" :
+    {
+        "Protoss"                   : "Protoss_ZealotRush",
+        "Terran"                    : "Terran_MarineRush",
+        "Zerg"                      : "Zerg_2HatchRoach",
+
+        "ScoutHarassEnemy"          : true,
+
+        "Strategies" :
+        {
+            "Protoss_ZealotRush"    :
+            {
+                "Race"              : "Protoss",
+                "OpeningBuildOrder" : ["Probe", "Probe", "Pylon", "Probe", "Probe", "Gateway", "Pylon", "Probe", "Gateway", "Probe", "Gateway", "Pylon", "Probe", "Zealot", "Zealot", "Pylon", "Zealot", "Zealot", "Pylon", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot", "Zealot"],
+                "ScoutCondition"    : [ ["Self", "Pylon"], ">", [ 0 ] ],
+                "AttackCondition"   : [ ["Self", "Zealot"], ">=", [ 8 ] ]
+            },
+            "Terran_MarineRush"     :
+            {
+                "Race"              : "Terran",
+                "OpeningBuildOrder" : ["SCV", "SCV", "SupplyDepot", "SCV", "SCV", "Barracks", "Barracks", "Barracks", "Barracks", "SupplyDepot", "SupplyDepot", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine", "Marine"],
+                "ScoutCondition"    : [ ["Self", "SupplyDepot"], ">", [ 0 ] ],
+                "AttackCondition"   : [ ["Self", "Marine"], ">=", [ 8 ] ]
+            },
+            "Zerg_ZerglingRush"     :
+            {
+                "Race"              : "Zerg",
+                "OpeningBuildOrder" : ["SpawningPool", "Drone", "Overlord", "Drone", "Zergling", "Zergling", "Zergling", "Zergling", "Zergling", "Zergling", "Zergling", "Zergling"],
+                "ScoutCondition"    : [ ["GameFrame"], ">=", [ 100 ] ],
+                "AttackCondition"   : [ ["Self", "Zergling"], ">", [ 0 ] ]
+            },
+            "Zerg_2HatchRoach"      :
+            {
+                "Race"              : "Zerg",
+                "OpeningBuildOrder" : ["SpawningPool", "Drone", "Overlord", "Drone", "Drone", "Extractor", "Drone", "Drone", "Hatchery", "Drone", "Overlord", "Drone", "RoachWarren", "Drone", "Drone", "Drone", "Drone", "Roach", "Overlord", "Roach", "Roach", "Roach", "Roach", "Overlord", "Roach", "Roach", "Roach", "Roach", "Roach", "Roach", "Roach"],
+                "ScoutCondition"    : [ ["self", "SpawningPool"], ">=", [ 1 ] ],
+                "AttackCondition"   : [ [["Self", "Roach"], ">=", [ 12 ]], "AND", [["Self", "Overlord"], ">=", [ 1 ]] ]
+            }
+        }
+    }
+}
