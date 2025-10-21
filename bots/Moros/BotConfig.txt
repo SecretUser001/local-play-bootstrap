@@ -10,10 +10,6 @@
     "SC2API" :
     {
         "BotRace"                   : "Protoss",
-        "EnemyDifficulty"           : 2,
-        "EnemyRace"                 : "Random",
-        "MapFile"                   : "/scratch/beda/starcraft/StarCraftII/maps/PylonAIE_v4.SC2Map",
-        "StepSize"                  : 1
     },
 
     "Micro" :
@@ -31,7 +27,6 @@
 
     "Debug" :
     {
-	"ReplayFolder"              : "/scratch/beda/games/lutris/games/battlenew2/drive_c/users/beda/Documents/StarCraft II/Accounts/1164985617/2-S2-1-10972823/Replays/Multiplayer/",
         "DrawGameInfo"              : true,
         "DrawProductionInfo"        : true,
         "DrawBaseLocationInfo"      : true,
